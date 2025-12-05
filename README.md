@@ -1,5 +1,1 @@
-How to run:
-
-pip install -r requirements.txt
-
-streamlit run app.py
+This project is a mini OCR system that reads shipping label / waybill images and extracts the full text line that contains the digit 1 (for example a tracking‑like string such as 163233702292313922_1_lWV). The focus is on robust extraction of that target line even when labels are noisy or partially degraded.
