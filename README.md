@@ -1,13 +1,13 @@
 ## Shipping Label OCR – Mini Project
 
-This project is a mini OCR system that reads shipping label / waybill images and extracts the full text line that contains the digit `1` (for example a tracking‑like string such as `163233702292313922_1_lWV`). The focus is on robust extraction of that target line even when labels are noisy or partially degraded.[2]
+This project is a mini OCR system that reads shipping label / waybill images and extracts the full text line that contains the digit `1` (for example a tracking‑like string such as `163233702292313922_1_lWV`). The focus is on robust extraction of that target line even when labels are noisy or partially degraded.
 
 ### Tech stack
 
 - Python  
 - Streamlit for the web UI  
 - EasyOCR as the OCR engine (open‑source)  
-- OpenCV and NumPy for image preprocessing[3][1]
+- OpenCV and NumPy for image preprocessing
 
 ### Features
 
@@ -15,7 +15,7 @@ This project is a mini OCR system that reads shipping label / waybill images and
 - Image preprocessing: resize, grayscale, denoise, contrast enhancement, binarization  
 - OCR using EasyOCR with bounding boxes and confidence scores  
 - Post‑processing to group words into lines and extract the line containing `1`  
-- Debug view that prints all detected text lines to help analyse failures[4][2]
+- Debug view that prints all detected text lines to help analyse failures
 
 ### Project structure
 
@@ -56,7 +56,7 @@ Run the Streamlit app:
 streamlit run app.py
 ```
 
-Then open the URL shown in the terminal (usually `http://localhost:8501`) in your browser.[5][6]
+Then open the URL shown in the terminal (usually `http://localhost:8501`) in your browser.
 
 Workflow:
 
@@ -65,10 +65,11 @@ Workflow:
 3. The app shows:
    - All detected text lines (debug section)  
    - The extracted line that contains the digit `1` and an estimated confidence score  
-   - Raw OCR JSON output, which can be saved as part of the assessment results[2]
+   - Raw OCR JSON output, which can be saved as part of the assessment results
 
 ### Approach (short)
 
-- **Preprocessing:** resize small images, convert to grayscale, denoise, apply CLAHE for contrast, then adaptive thresholding to create a clean binary image for OCR.[7][4]
-- **OCR:** run EasyOCR on the preprocessed image to obtain bounding boxes, recognized text, and per‑word confidence scores.[8][3]
+- **Preprocessing:** resize small images, convert to grayscale, denoise, apply CLAHE for contrast, then adaptive thresholding to create a clean binary image for OCR.
+- **OCR:** run EasyOCR on the preprocessed image to obtain bounding boxes, recognized text, and per‑word confidence scores.
 - **Text extraction:** convert words to line groups based on y‑coordinate proximity, sort by x‑position, join into full lines, and select the line whose text contains the pattern `"1"`.
+
