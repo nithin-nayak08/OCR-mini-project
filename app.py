@@ -46,7 +46,7 @@ if uploaded_file is not None:
             st.write(f"**Line:** {target_line}")
             st.write(f"**Estimated confidence:** {conf:.3f}")
         else:
-            st.error("No line containing '1' was found in this image.")
+            st.error("No line containing '_1_' was found in this image.")
 
         st.subheader("Raw OCR JSON")
         st.json(ocr_result)
