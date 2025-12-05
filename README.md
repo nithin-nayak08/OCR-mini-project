@@ -72,7 +72,8 @@ Workflow:
 - **Preprocessing:** resize small images, convert to grayscale, denoise, apply CLAHE for contrast, then adaptive thresholding to create a clean binary image for OCR.
 - **OCR:** run EasyOCR on the preprocessed image to obtain bounding boxes, recognized text, and per‑word confidence scores.
 - **Text extraction:** convert words to line groups based on y‑coordinate proximity, sort by x‑position, join into full lines, and select the line whose text contains the pattern `"1"`.
-For Testing click on https://drive.google.com/drive/folders/1Psu8m0ZiHzMpxa8-4mKg5wsbverHIBIX?usp=drive_link for OCR images
+- For Testing click on https://drive.google.com/drive/folders/1Psu8m0ZiHzMpxa8-4mKg5wsbverHIBIX?usp=drive_link for OCR images
   
+
 
 
